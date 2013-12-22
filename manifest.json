@@ -1,0 +1,25 @@
+{
+  "background" : "bg.html",
+  "content_scripts": [{
+    "matches": ["http://*/*", "https://*/*"],
+    "js": ["jquery-1.2.6.min.js", "goto.js"]
+  }],
+  "name": "Koreapas article preview plugin",
+  "version": "1.1",
+  "manifest_version" : 2,
+  "description": "고파스 글을 클릭하지 않고도 미리볼 수 있어요. 만든사람 : 다람",
+  "browser_action": {
+    "default_icon": "icon.png"
+    
+  },
+  "permissions": [
+    "http://*.koreapas.net/",
+    "tabs"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["*://*.koreapas.*/*"],
+      "js": ["jquery-1.2.6.min.js", "goto.js"]
+    }
+  ]
+}
